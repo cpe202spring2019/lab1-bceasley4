@@ -5,8 +5,10 @@ class TestLab1(unittest.TestCase):
 
     def test_repr(self):
         loc = Location("SLO", 35.3, -120.7)
+        #check with decimals
         self.assertEqual(repr(loc),"Location('SLO', 35.3, -120.7)")
         loc = Location("Paris", 1, 2)
+        #check with whole numbers
         self.assertEqual(repr(loc), "Location('Paris', 1, 2)")
     # Add more tests!
     #def test_init(self, name, lat, lon):
@@ -17,8 +19,11 @@ class TestLab1(unittest.TestCase):
         loc2 = Location("Italy", -5, 4.5)
         loc3 = loc1
         loc4 = Location("Italy", -5, 4.5)
+        #check different locations
         self.assertFalse(loc1 == loc2)
+        #check same locations
         self.assertTrue(loc2 == loc4)
+        #check the same locations
         self.assertTrue(loc1 == loc3)
 
 
